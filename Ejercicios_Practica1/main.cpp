@@ -5,12 +5,13 @@ using namespace std;
 int main()
 {
 
-    int a,b,c,numero1=0,numero2=0,numero3=0,resultado1=0, resultado2=0,residuo1=0,suma1=0,suma2=0,contador1=0,contador2=0,x=0,y=0,z=0,opcion=1;
-    float num1=0,num2=0,res1=0,sum1=0,perimetro=0,area=0;
+    int a=0,b=0,c=0,fact=1,numero1=0,numero2=0,numero3=0,resultado1=0, resultado2=0,residuo1=0,suma1=0,suma2=0,contador1=0,contador2=0,x=0,y=0,z=0,opcion=1;
+    float num1=0,num2=0,res1=0,sum1=0,pi=3.1416,perimetro=0,area=0;
     long long resgrande=0,resul1=0,resul2=0,resul3=0,k=0;
     char letra;
     bool w;;
     while(opcion!=0){
+        cout<<endl<<"GUIA 1 LABORATORIO DE INFORMATICA II 2021-1"<<endl;
         cout<<endl<<"Ejercicio 1: Residuo Division A/B"<<endl;
         cout<<endl<<"Ejercicio 2: Numero Par o Impar"<<endl;
         cout<<endl<<"Ejercicio 3: Numero mayor entre A y B"<<endl;
@@ -18,6 +19,10 @@ int main()
         cout<<endl<<"Ejercicio 5: Division con redondeo"<<endl;
         cout<<endl<<"Ejercicio 6: A^B"<<endl;
         cout<<endl<<"Ejercicio 7: Suma desde 0 hasta N"<<endl;
+        cout<<endl<<"Ejercicio 8: Numero factorial"<<endl;
+        cout<<endl<<"Ejercicio 9: Area y perimetro de un triangulo"<<endl;
+        cout<<endl<<"Ejercicio 10: Multiplos de N menores que 100"<<endl;
+        cout<<endl<<"Ejercicio 11: Tabla de multiplicar 10xN"<<endl;
         cout<<endl<<"0 para salir"<<endl;
         cin>>opcion;
         cout<<endl;
@@ -103,19 +108,43 @@ int main()
                 suma1+=i;
             }
             cout<<endl<<"la sumatoria desde 0 hasta "<<a<<" es: "<<suma1<<endl;
-            cout<<endl;
             break;
         case 8:
             cout<<endl<<"Ejecutando Ejercicio 8 Guia 1 Lab 2021"<<endl;
+            cout<<"Ingrese el numero: ";
+                cin>>a;
+                for(int i=1;i<=a;i++){
+                    fact*=i;
+                }
+                cout<<"el factorial de "<<a<<" es: "<<fact<<endl;
             break;
         case 9:
             cout<<endl<<"Ejecutando Ejercicio 9 Guia 1 Lab 2021"<<endl;
+            cout<<"Ingrese el numero: ";
+            cin>>a;
+            perimetro = (2*pi)*a;
+            area = (a*a)*pi;
+            cout<<endl<<"Perimetro: "<<perimetro<<endl;
+            cout<<"Area: "<<area<<endl;
             break;
         case 10:
             cout<<endl<<"Ejecutando Ejercicio 10 Guia 1 Lab 2021"<<endl;
+            cout<<"Ingrese el numero: ";
+            cin>>a;
+            cout<<endl<<"Los multiplos de: "<<a<<" menores que 100 son: "<<endl;
+            for(int i=1;c<100-(a-1);i++){
+                c=i*a;
+                cout<<c<<endl;
+            }
             break;
         case 11:
             cout<<endl<<"Ejecutando Ejercicio 11 Guia 1 Lab 2021"<<endl;
+            cout<<"Ingrese el numero: ";
+            cin>>a;
+            for(int i=1;i<11;i++){
+                b=a*i;
+                cout<<a<<"X"<<i<<"= "<<b<<endl;
+            }
             break;
         case 12:
             cout<<endl<<"Ejecutando Ejercicio 12 Guia 1 Lab 2021"<<endl;
