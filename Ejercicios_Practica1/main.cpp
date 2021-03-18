@@ -5,204 +5,181 @@ using namespace std;
 int main()
 {
 
-    int a=0,b=0,c=0,fact=1,numero1=0,numero2=0,numero3=0,resultado1=0, resultado2=0,residuo1=0,suma1=0,suma2=0,contador1=0,contador2=0,x=0,y=0,z=0,opcion=1;
-    float num1=0,num2=0,res1=0,sum1=0,pi=3.1416,perimetro=0,area=0;
-    long long resgrande=0,resul1=0,resul2=0,resul3=0,k=0;
-    char letra;
-    bool w;;
+    int opcion=1;
+    int ascii = 0;
+    int cont_B50 = 0;
+    int cont_B20 = 0;
+    int cont_B10 = 0;
+    int cont_B5 = 0;
+    int cont_B2 = 0;
+    int cont_B1 = 0;
+    int cont_M500 = 0;
+    int cont_M200 = 0;
+    int cont_M100 = 0;
+    int cont_M50 = 0;
+    int Dinero = 0;
+    int Resto = 0;
+    int numero1=0;
+    int numero2=0;
+    int H1 = 0;
+    int H2 = 0;
+    int min1=0;
+    int min2=0;
+    int sum_Hor = 0;
+    int sum_Min = 0;
+    int numero = 0;
+    int asterisco = 0;
+    int espacios= 0;
+    char letra=0;
+
     while(opcion!=0){
         cout<<endl<<"GUIA 1 LABORATORIO DE INFORMATICA II 2021-1"<<endl;
-        cout<<endl<<"Ejercicio 1: Residuo Division A/B"<<endl;
-        cout<<endl<<"Ejercicio 2: Numero Par o Impar"<<endl;
-        cout<<endl<<"Ejercicio 3: Numero mayor entre A y B"<<endl;
-        cout<<endl<<"Ejercicio 4: Numero menor entre A y B"<<endl;
-        cout<<endl<<"Ejercicio 5: Division con redondeo"<<endl;
-        cout<<endl<<"Ejercicio 6: A^B"<<endl;
-        cout<<endl<<"Ejercicio 7: Suma desde 0 hasta N"<<endl;
-        cout<<endl<<"Ejercicio 8: Numero factorial"<<endl;
-        cout<<endl<<"Ejercicio 9: Area y perimetro de un triangulo"<<endl;
-        cout<<endl<<"Ejercicio 10: Multiplos de N menores que 100"<<endl;
-        cout<<endl<<"Ejercicio 11: Tabla de multiplicar 10xN"<<endl;
+        cout<<endl<<"Problema 1: Caracter ingresado es vocal o consonante"<<endl;
+        cout<<endl<<"Problema 2: Cantidad de billetes y monedas"<<endl;
+        cout<<endl<<"Problema 4: 2 Numeros enteros que representan horas del reloj"<<endl;
+        cout<<endl<<"Problema 5: Patron del rombo"<<endl;
+        cout<<endl<<"Problema 7: Serie de Fibonacci"<<endl;
+        cout<<endl<<"Problema 9: Suma de las cifras de un numero N elevados a si mismo"<<endl;
+        cout<<endl<<"Problema 12: Maximo factor primo de un numero"<<endl;
+        cout<<endl<<"Problema 14: Numero palindromo"<<endl;
+        cout<<endl<<"Problema 15: Espiral de numeros"<<endl;
+        cout<<endl<<"Problema 17: Multiplos de N menores que 100"<<endl;
         cout<<endl<<"0 para salir"<<endl;
         cin>>opcion;
         cout<<endl;
         switch (opcion)
         {
         case 1:
-            cout<<endl<<"Ejecutando Ejercicio 1 Guia 1 Lab 2021"<<endl;
-            cout<<endl<<"ingrese el primer numero: ";
-            cin>>a;
-            cout<<endl<<"ingrese el segundo numero: ";
-            cin>>b;
-            cout<<endl<<"El residuo de la Division "<<a<<"/"<<b<<" Es : "<< a%b << endl;
+            cout<<"ingrese caracter: ";
+                cin>>letra;
+                ascii=letra;
+                if(ascii==65||ascii==97||ascii==69||ascii==101||ascii==73||ascii==105||ascii==79||ascii==111||ascii==85||ascii==117){
+                    cout<<letra<<" es una vocal"<<endl;
+                    break;
+                }
+                if(ascii==66||ascii==98||ascii==67||ascii==99||ascii==68||ascii==100||ascii==70||ascii==102||ascii==71||ascii==103||ascii==72||ascii==104||ascii==74||ascii==106||ascii==75||ascii==107||ascii==76||ascii==108||ascii==77||ascii==109||ascii==78||ascii==110||ascii==80||ascii==112||ascii==81||ascii==113||ascii==82||ascii==114||ascii==83||ascii==115||ascii==84||ascii==116||ascii==86||ascii==118||ascii==87||ascii==119||ascii==88||ascii==120||ascii==89||ascii==121||ascii==90||ascii==122){
+                    cout<<letra<<" es una consonante"<<endl;
+                    break;
+                }
+                else{
+                    cout<<letra<<" no es una letra"<<endl;
+                }
             break;
         case 2:
-            cout<<endl<<"Ejecutando Ejercicio 2 Guia 1 Lab 2021"<<endl;
-            cout<<"Ingrese el numero: "<<endl;
-            cin>>a;
-            if(a%2==0){
-                cout<<endl<<"El numero: "<<a<<" es par"<<endl;
-            }
-            else{
-                cout<<endl<<"El numero: "<<a<<" es impar"<<endl;
-            }
-            break;
-        case 3:
-            cout<<endl<<"Ejecutando Ejercicio 3 Guia 1 Lab 2021"<<endl;
-            cout<<endl<<"Ingrese el primer numero: ";
-            cin>>a;
-            cout<<endl<<"ingrese el segundo numero: ";
-            cin>>b;
-            if(a>b){
-                cout<<endl<<"el mayor es: "<<a<<endl;
-            }
-            else{
-                cout<<endl<<"el mayor es: "<<b<<endl;
-            }
+            cout<<"Ingrese la cantidad de dinero: ";
+                cin>>Dinero;
+                while(Dinero>=50000){
+                    Dinero-=50000;
+                    cont_B50++;
+                }
+                while(Dinero>=20000){
+                    Dinero-=20000;
+                    cont_B20++;
+                }
+                while(Dinero>=10000){
+                    Dinero-=10000;
+                    cont_B10++;
+                }
+                while(Dinero>=5000){
+                    Dinero-=5000;
+                    cont_B5++;
+                }
+                while(Dinero>=2000){
+                    Dinero-=2000;
+                    cont_B2++;
+                }
+                while(Dinero>=1000){
+                    Dinero-=1000;
+                    cont_B1++;
+                }
+                while(Dinero>=500){
+                    Dinero-=500;
+                    cont_M500++;
+                }
+                while(Dinero>=200){
+                    Dinero-=200;
+                    cont_M200++;
+                }
+                while(Dinero>=100){
+                    Dinero-=100;
+                    cont_M100++;
+                }
+                while(Dinero>=50){
+                    Dinero-=50;
+                    cont_M50++;
+                }
+                Resto=Dinero;
+                cout<<"la cantidad de Billetes de 50000 es: "<<cont_B50<<endl;
+                cout<<"la cantidad de Billetes de 20000 es: "<<cont_B20<<endl;
+                cout<<"la cantidad de Billetes de 10000 es: "<<cont_B10<<endl;
+                cout<<"la cantidad de Billetes de 5000 es: "<<cont_B5<<endl;
+                cout<<"la cantidad de Billetes de 2000 es: "<<cont_B2<<endl;
+                cout<<"la cantidad de Billetes de 1000 es: "<<cont_B1<<endl;
+                cout<<"la cantidad de Monedas de 500 es: "<<cont_M500<<endl;
+                cout<<"la cantidad de Monedas de 200 es: "<<cont_M200<<endl;
+                cout<<"la cantidad de Monedas de 100 es: "<<cont_M100<<endl;
+                cout<<"la cantidad de Monedas de 50 es: "<<cont_M50<<endl;
+                cout<<"Faltante: "<<Resto<<endl;
             break;
         case 4:
-            cout<<endl<<"Ejecutando Ejercicio 4 Guia 1 Lab 2021"<<endl;
-            cout<<endl<<"Ingrese el primer numero: ";
-            cin>>a;
-            cout<<endl<<"ingrese el segundo numero: ";
-            cin>>b;
-            if(a<b){
-                cout<<endl<<"el menor es: "<<a<<endl;
-            }
-            else{
-                cout<<endl<<"el manor es: "<<b<<endl;
-            }
+            cout<<"ingrese el primer numero: ";
+                cin>>numero1;
+                cout<<"ingrese el segundo numero: ";
+                cin>>numero2;
+                min1 = numero1%100;
+                min2 = numero2%100;
+                H1 = numero1/100;
+                H2 = numero2/100;
+                sum_Hor = H1+H2;
+                sum_Min = min1+min2;
+                if(sum_Min>60){
+                    sum_Hor = sum_Hor+1;
+                    sum_Min = sum_Min-60;
+                }
+                cout<<"La hora es: "<<sum_Hor<<sum_Min<<endl;
             break;
         case 5:
-            cout<<endl<<"Ejecutando Ejercicio 5 Guia 1 Lab 2021"<<endl;
-            cout <<endl<<"Ingrese el primer numero: ";
-            cin >>numero1;
-            cout <<endl<<"Ingrese el segundo numero: ";
-            cin>>numero2;
-            resultado1 = numero1/numero2;
-            num1 = numero1; //float
-            num2= numero2; // float
-            res1 = num1/num2; // float
-            sum1 = res1-resultado1;
-            if (sum1>=0.5){
-                resultado1= resultado1+1;
-            }
-            cout <<numero1<<" / "<<numero2<<" = "<<resultado1<<endl;
-            break;
-        case 6:
-            cout<<endl<<"Ejecutando Ejercicio 6 Guia 1 Lab 2021"<<endl;
-            cout <<endl<<"Ingrese el numero de la base: ";
-            cin >>numero1;
-            cout <<endl<<"Ingrese el numero del exponente: ";
-            cin>>numero2;
-            for (contador1=1 , resultado1=1;numero2>=contador1;contador1++){
-                resultado1 = resultado1*numero1;
-            }
-            cout <<endl<<numero1<<" ^ "<<numero2<<" es "<<resultado1<<endl;
+            cout<<"ingrese un numero: ";
+                cin>>numero;
+                for(int i=1;i<=numero;i++){
+                    for(espacios=i;espacios<=numero-1;espacios++){
+                        cout<<" ";
+                    }
+                    for(asterisco=1;asterisco<=(2*i)-1;asterisco++){
+                        cout<<"*";
+                    }
+                    cout<<endl;
+                }
+                for(int i=numero-1;i>=1;i--){
+                    for(espacios=i;espacios<=numero-1;espacios++){
+                        cout<<" ";
+                    }
+                    for(asterisco=1;asterisco<=(2*i)-1;asterisco++){
+                        cout<<"*";
+                    }
+                    cout<<endl;
+                }
+
             break;
         case 7:
-            cout<<endl<<"Ejecutando Ejercicio 7 Guia 1 Lab 2021"<<endl;
-            cout<<endl<<"Ingrese un numero: ";
-            cin>>a;
-            for(int i=0;i<=a;i++){
-                suma1+=i;
-            }
-            cout<<endl<<"la sumatoria desde 0 hasta "<<a<<" es: "<<suma1<<endl;
-            break;
-        case 8:
-            cout<<endl<<"Ejecutando Ejercicio 8 Guia 1 Lab 2021"<<endl;
-            cout<<"Ingrese el numero: ";
-                cin>>a;
-                for(int i=1;i<=a;i++){
-                    fact*=i;
-                }
-                cout<<"el factorial de "<<a<<" es: "<<fact<<endl;
+
             break;
         case 9:
-            cout<<endl<<"Ejecutando Ejercicio 9 Guia 1 Lab 2021"<<endl;
-            cout<<"Ingrese el numero: ";
-            cin>>a;
-            perimetro = (2*pi)*a;
-            area = (a*a)*pi;
-            cout<<endl<<"Perimetro: "<<perimetro<<endl;
-            cout<<"Area: "<<area<<endl;
-            break;
-        case 10:
-            cout<<endl<<"Ejecutando Ejercicio 10 Guia 1 Lab 2021"<<endl;
-            cout<<"Ingrese el numero: ";
-            cin>>a;
-            cout<<endl<<"Los multiplos de: "<<a<<" menores que 100 son: "<<endl;
-            for(int i=1;c<100-(a-1);i++){
-                c=i*a;
-                cout<<c<<endl;
-            }
-            break;
-        case 11:
-            cout<<endl<<"Ejecutando Ejercicio 11 Guia 1 Lab 2021"<<endl;
-            cout<<"Ingrese el numero: ";
-            cin>>a;
-            for(int i=1;i<11;i++){
-                b=a*i;
-                cout<<a<<"X"<<i<<"= "<<b<<endl;
-            }
+
             break;
         case 12:
-            cout<<endl<<"Ejecutando Ejercicio 12 Guia 1 Lab 2021"<<endl;
-            break;
-        case 13:
-            cout<<endl<<"Ejecutando Ejercicio 13 Guia 1 Lab 2021"<<endl;
+
             break;
         case 14:
-            cout<<endl<<"Ejecutando Ejercicio 14 Guia 1 Lab 2021"<<endl;
+
             break;
         case 15:
-            cout<<endl<<"Ejecutando Ejercicio 15 Guia 1 Lab 2021"<<endl;
-            break;
-        case 16:
-            cout<<endl<<"Ejecutando Ejercicio 16 Guia 1 Lab 2021"<<endl;
+
             break;
         case 17:
-            cout<<endl<<"Ejecutando Ejercicio 17 Guia 1 Lab 2021"<<endl;
+
             break;
-        case 18:
-            cout<<endl<<"Ejecutando Ejercicio 18 Guia 1 Lab 2021"<<endl;
-            break;
-        case 19:
-            cout<<endl<<"Ejecutando Ejercicio 19 Guia 1 Lab 2021"<<endl;
-            break;
-        case 20:
-            cout<<endl<<"Ejecutando Ejercicio 20 Guia 1 Lab 2021"<<endl;
-            break;
-        case 21:
-            cout<<endl<<"Ejecutando Ejercicio 21 Guia 1 Lab 2021"<<endl;
-            break;
-        case 22:
-            cout<<endl<<"Ejecutando Ejercicio 22 Guia 1 Lab 2021"<<endl;
-            break;
-        case 23:
-            cout<<endl<<"Ejecutando Ejercicio 23 Guia 1 Lab 2021"<<endl;
-            break;
-        case 24:
-            cout<<endl<<"Ejecutando Ejercicio 24 Guia 1 Lab 2021"<<endl;
-            break;
-        case 25:
-            cout<<endl<<"Ejecutando Ejercicio 25 Guia 1 Lab 2021"<<endl;
-            break;
-        case 26:
-            cout<<endl<<"Ejecutando Ejercicio 26 Guia 1 Lab 2021"<<endl;
-            break;
-        case 27:
-            cout<<endl<<"Ejecutando Ejercicio 27 Guia 1 Lab 2021"<<endl;
-            break;
-        case 28:
-            cout<<endl<<"Ejecutando Ejercicio 28 Guia 1 Lab 2021"<<endl;
-            break;
-        case 29:
-            cout<<endl<<"Ejecutando Ejercicio 29 Guia 1 Lab 2021"<<endl;
-            break;
-        default:
-            cout<<endl<<"Ejecutando Ejercicio 30 Guia 1 Lab 2021"<<endl;
-            break;
+
     }
 
     }
