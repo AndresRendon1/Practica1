@@ -155,8 +155,8 @@ int main()
         case 4:// La suma de 2 horas
             cout<<"ingrese el primer numero: ";// Se ingresa el primer tiempo y lo descomponemos en horas y minutos
                 cin>>numero1;
-                min1 = numero1%100;
-                H1 = numero1/100;
+                min1 = numero1%100;//obtenemos los ultimos digitos del numero ingresado que representan los minutos
+                H1 = numero1/100;// obtenemos los primeros 2 digitos del numero ingresado que representan la hora
                 if (H1>23 || min1>59 ){// Si las horas del numero ingresado excenden 23 o los minutos son mayores de 59 se imprimira que el tiempo es invalido
                     cout<<H1<<min1<<" Es un tiempo invalido"<<endl;
                     numero1=0; //reseteamos las variables debido a que se interrumpira la ejecucion
@@ -165,10 +165,10 @@ int main()
                 }
                 cout<<"ingrese el segundo numero: ";// Se ingresa el segundo tiempo y se descompone en horas y minutos
                 cin>>numero2;
-                min2 = numero2%100;
-                H2 = numero2/100;
-                sum_Hor = H1+H2;
-                sum_Min = min1+min2;
+                min2 = numero2%100;//obtenemos los ultimos digitos del numero ingresado que representan los minutos
+                H2 = numero2/100;// obtenemos los primeros 2 digitos del numero ingresado que representan la hora
+                sum_Hor = H1+H2;//sumamos las horas
+                sum_Min = min1+min2;//sumamos los minutos
                 if (H2>23 || min2>59){// Si las horas del numero ingresado excenden 23 o los minutos son mayores de 59 se imprimira que el tiempo es invalido
                     cout<<H2<<min2<<" Es un tiempo invalido"<<endl;
                     numero1=0; //reseteamos las variables debido a que se interrumpira la ejecucion
@@ -250,6 +250,9 @@ int main()
             cin>>numero1;
             for(;numero1!=0;numero1/=10){//este ciclo nos ayudara a descomponer el numero en digitos ya que en cada iteracion el numero se ira dividiendo por 10
                 numero2=numero1%10;//obtenemos los digitos en cada iteracion
+                if(numero2==0||numero1==0){
+                    resultado2=resultado2+1;
+                }
                 for(resultado1=numero2,contador2=1;contador2<numero2;contador2=contador2+1){//este ciclo nos ayuda a hacer la potenciacion
                     resultado1=numero2*resultado1;
                 }
